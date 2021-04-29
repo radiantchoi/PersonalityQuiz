@@ -18,6 +18,7 @@ extension ResultsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         calculatePersonalityResult()
+        navigationItem.hidesBackButton = true
     }
 }
 
@@ -47,3 +48,4 @@ extension ResultsViewController {
         resultDefinitionLabel.text = mostCommonAnswer.definition
     }
 }
+
