@@ -87,7 +87,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pi4-dS-vmN">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pi4-dS-vmN" userLabel="Single Stack View">
                                 <rect key="frame" x="20" y="331" width="46" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbU-qW-72I">
@@ -108,7 +108,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ION-rZ-IFW">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ION-rZ-IFW" userLabel="Multiple Stack View">
                                 <rect key="frame" x="20" y="304" width="374" height="234"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="178" translatesAutoresizingMaskIntoConstraints="NO" id="eHg-6q-WiN">
@@ -173,7 +173,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-99-k8q">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-99-k8q" userLabel="Ranged Stack View">
                                 <rect key="frame" x="20" y="361" width="374" height="120.5"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vqJ-4m-1cT">
@@ -233,6 +233,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="lsX-kh-xja"/>
                     <connections>
+                        <outlet property="multipleStackView" destination="ION-rZ-IFW" id="fO3-Vz-7le"/>
+                        <outlet property="rangedStackView" destination="mtm-99-k8q" id="0Dw-3e-RAa"/>
+                        <outlet property="singleStackView" destination="pi4-dS-vmN" id="lrX-v2-Rw6"/>
                         <segue destination="JNP-6L-SU9" kind="show" identifier="ResultsSegue" id="Gcv-Ct-DOP"/>
                     </connections>
                 </viewController>
