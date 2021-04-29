@@ -8,12 +8,17 @@
 import UIKit
 
 class IntroViewController: UIViewController {
+}
 
+extension IntroViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
+
+extension IntroViewController {
+    @IBAction func unwindToQuizIntroduction(segue: UIStoryboardSegue) {
+    }
+}
+
 
