@@ -13,9 +13,32 @@ final class ResultsViewController: UIViewController {
 }
 
 extension ResultsViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        calculatePersonalityResult()
     }
-    
+}
+
+extension ResultsViewController {
+    private func calculatePersonalityResult() {
+        var frequencyOfAnswers: [AnimalType: Int] = [:]
+        let responseTypes = responses.map { $0.type }
+        for response in responseTypes {
+            let newCount: Int
+            
+            if let oldCount = frequencyOfAnswers[response] {
+                newCount = oldCount + 1
+            } else {
+                newCount = 1
+            }
+            
+            frequencyOfAnswers[response] = newCount
+        }
+        
+        let frequentAnswersSorted = frequencyOfAnswers.sorted(by: { (pair1, pair2) -> Bool in
+            return pair1.value > pair2.value
+        })
+        
+        let mostCommonAnswer = frequentAnswersSorted.first!.key
+    }
 }
