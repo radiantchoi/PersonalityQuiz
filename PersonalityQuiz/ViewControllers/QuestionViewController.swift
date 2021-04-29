@@ -34,9 +34,6 @@ final class QuestionViewController: UIViewController {
     
     @IBOutlet private var questionProgressView: UIProgressView!
     
-    
-    
-    
     private var questions: [Question] = [
         Question(text: "Which food do you like the most?", type: .single, answers: [
                     Answer(text: "Steak", type: .dog),
@@ -60,12 +57,14 @@ final class QuestionViewController: UIViewController {
     
 }
 
+
 extension QuestionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
 }
+
 
 extension QuestionViewController {
     private func updateUI() {
@@ -112,7 +111,18 @@ extension QuestionViewController {
         rangedLabel1.text = answers.first?.text
         rangedLabel2.text = answers.last?.text
     }
+    
+    private func nextQuestion() {
+        questionIndex += 1
+        
+        if questionIndex < questions.count {
+            updateUI()
+        } else {
+            performSegue(withIdentifier: "ResultSegue", sender: nil)
+        }
+    }
 }
+
 
 extension QuestionViewController {
     
@@ -154,7 +164,7 @@ extension QuestionViewController {
         nextQuestion()
     }
     
-    @IBAction func rangedAnswerButtonPressed() {
+    @IBAction private func rangedAnswerButtonPressed() {
         let currentAnswers = questions[questionIndex].answers
         let index = Int(round(rangedSlider.value * Float(currentAnswers.count - 1)))
         
@@ -162,5 +172,4 @@ extension QuestionViewController {
         
         nextQuestion()
     }
-
 }

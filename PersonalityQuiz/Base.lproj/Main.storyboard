@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="34.5" width="318.5" height="30"/>
                                         <state key="normal" title="Begin Personality Quiz"/>
                                         <connections>
-                                            <segue destination="XP4-Xc-3DS" kind="modal" id="Vsw-Hk-PLT"/>
+                                            <segue destination="XP4-Xc-3DS" kind="presentation" id="Vsw-Hk-PLT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -271,7 +271,7 @@
                         <outlet property="singleButton3" destination="7cX-zG-JAs" id="mI4-oV-GKr"/>
                         <outlet property="singleButton4" destination="OyJ-uG-Yhg" id="k4H-0B-fi8"/>
                         <outlet property="singleStackView" destination="pi4-dS-vmN" id="lrX-v2-Rw6"/>
-                        <segue destination="JNP-6L-SU9" kind="show" identifier="ResultsSegue" id="Gcv-Ct-DOP"/>
+                        <segue destination="JNP-6L-SU9" kind="show" identifier="ResultSegue" id="b2X-v0-GxO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adc-aA-V0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
