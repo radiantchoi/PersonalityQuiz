@@ -230,11 +230,29 @@
                             <constraint firstItem="Yx8-WG-6hB" firstAttribute="trailing" secondItem="mtm-99-k8q" secondAttribute="trailing" constant="20" id="yUV-Wi-Khl"/>
                             <constraint firstItem="Yx8-WG-6hB" firstAttribute="trailing" secondItem="ION-rZ-IFW" secondAttribute="trailing" constant="20" id="zu4-ck-NAZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pi4-dS-vmN"/>
+                                <exclude reference="ION-rZ-IFW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="lsX-kh-xja"/>
                     <connections>
+                        <outlet property="multiLabel1" destination="ITs-bv-Lxj" id="mK5-Ff-zHC"/>
+                        <outlet property="multiLabel2" destination="y4T-qx-L2v" id="6Lr-27-rhT"/>
+                        <outlet property="multiLabel3" destination="yUW-Ge-bIY" id="OKG-Sf-syc"/>
+                        <outlet property="multiLabel4" destination="RKd-g8-g5w" id="Ux6-WH-vGo"/>
                         <outlet property="multipleStackView" destination="ION-rZ-IFW" id="fO3-Vz-7le"/>
+                        <outlet property="questionLabel" destination="cuO-Yk-V9R" id="6Kj-aX-W19"/>
+                        <outlet property="questionProgressView" destination="qKs-nA-BIT" id="9Ks-ZG-8ng"/>
+                        <outlet property="rangedLabel1" destination="sxr-Hb-0Bw" id="HZ6-aK-1DG"/>
+                        <outlet property="rangedLabel2" destination="Bf7-ZD-YtH" id="GuE-b1-f6O"/>
                         <outlet property="rangedStackView" destination="mtm-99-k8q" id="0Dw-3e-RAa"/>
+                        <outlet property="singleButton1" destination="AbU-qW-72I" id="RaA-pp-cMI"/>
+                        <outlet property="singleButton2" destination="7oe-0v-aqF" id="vuu-Jd-iR2"/>
+                        <outlet property="singleButton3" destination="7cX-zG-JAs" id="mI4-oV-GKr"/>
+                        <outlet property="singleButton4" destination="OyJ-uG-Yhg" id="k4H-0B-fi8"/>
                         <outlet property="singleStackView" destination="pi4-dS-vmN" id="lrX-v2-Rw6"/>
                         <segue destination="JNP-6L-SU9" kind="show" identifier="ResultsSegue" id="Gcv-Ct-DOP"/>
                     </connections>

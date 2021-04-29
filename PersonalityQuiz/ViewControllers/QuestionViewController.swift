@@ -8,10 +8,27 @@
 import UIKit
 
 final class QuestionViewController: UIViewController {
-
+    
+    @IBOutlet private var questionLabel: UILabel!
+    
     @IBOutlet private var singleStackView: UIStackView!
+    @IBOutlet private var singleButton1: UIButton!
+    @IBOutlet private var singleButton2: UIButton!
+    @IBOutlet private var singleButton3: UIButton!
+    @IBOutlet private var singleButton4: UIButton!
+    
     @IBOutlet private var multipleStackView: UIStackView!
+    @IBOutlet private var multiLabel1: UILabel!
+    @IBOutlet private var multiLabel2: UILabel!
+    @IBOutlet private var multiLabel3: UILabel!
+    @IBOutlet private var multiLabel4: UILabel!
+    
     @IBOutlet private var rangedStackView: UIStackView!
+    @IBOutlet private var rangedLabel1: UILabel!
+    @IBOutlet private var rangedLabel2: UILabel!
+    
+    @IBOutlet private var questionProgressView: UIProgressView!
+    
     
     private var questions: [Question] = [
         Question(text: "Which food do you like the most?", type: .single, answers: [
@@ -47,17 +64,43 @@ extension QuestionViewController {
         multipleStackView.isHidden = true
         rangedStackView.isHidden = true
         
-        navigationItem.title = "Question #\(questionIndex)"
-        
         let currentQuestion = questions[questionIndex]
+        let currentAnswers = currentQuestion.answers
+        let totalProgress = Float(questionIndex) / Float(questions.count)
+        
+        navigationItem.title = "Question #\(questionIndex)"
+        questionLabel.text = currentQuestion.text
+        questionProgressView.setProgress(totalProgress, animated: true)
         
         switch currentQuestion.type {
         case .single:
-            singleStackView.isHidden = false
+            updateSingleStack(using: currentAnswers)
         case .multiple:
-            multipleStackView.isHidden = false
+            updateMultipleStack(using: currentAnswers)
         case .ranged:
-            singleStackView.isHidden = false
+            updateRangedStack(using: currentAnswers)
         }
+    }
+    
+    private func updateSingleStack(using answers: [Answer]) {
+        singleStackView.isHidden = false
+        singleButton1.setTitle(answers[0].text, for: .normal)
+        singleButton2.setTitle(answers[1].text, for: .normal)
+        singleButton3.setTitle(answers[2].text, for: .normal)
+        singleButton4.setTitle(answers[3].text, for: .normal)
+    }
+    
+    private func updateMultipleStack(using answers: [Answer]) {
+        multipleStackView.isHidden = false
+        multiLabel1.text = answers[0].text
+        multiLabel2.text = answers[1].text
+        multiLabel3.text = answers[2].text
+        multiLabel4.text = answers[3].text
+    }
+    
+    private func updateRangedStack(using answers: [Answer]) {
+        rangedStackView.isHidden = false
+        rangedLabel1.text = answers.first?.text
+        rangedLabel2.text = answers.last?.text
     }
 }
