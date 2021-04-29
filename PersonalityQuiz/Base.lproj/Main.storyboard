@@ -230,12 +230,6 @@
                             <constraint firstItem="Yx8-WG-6hB" firstAttribute="trailing" secondItem="mtm-99-k8q" secondAttribute="trailing" constant="20" id="yUV-Wi-Khl"/>
                             <constraint firstItem="Yx8-WG-6hB" firstAttribute="trailing" secondItem="ION-rZ-IFW" secondAttribute="trailing" constant="20" id="zu4-ck-NAZ"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="pi4-dS-vmN"/>
-                                <exclude reference="ION-rZ-IFW"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="lsX-kh-xja"/>
                     <connections>
