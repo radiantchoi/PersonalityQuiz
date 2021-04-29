@@ -315,6 +315,10 @@
                     <navigationItem key="navigationItem" title="Results" id="3mT-gD-4Ay">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="qRf-AE-u3H"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultAnswerLabel" destination="LDq-mK-Nzh" id="E6V-Vv-cdB"/>
+                        <outlet property="resultDefinitionLabel" destination="Dbr-Fd-YM7" id="dBj-hD-9IU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qno-AI-X54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

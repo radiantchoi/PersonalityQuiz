@@ -8,7 +8,9 @@
 import UIKit
 
 final class ResultsViewController: UIViewController {
-
+    @IBOutlet private var resultAnswerLabel: UILabel!
+    @IBOutlet private var resultDefinitionLabel: UILabel!
+    
     var responses: [Answer]!
 }
 
@@ -40,5 +42,8 @@ extension ResultsViewController {
         })
         
         let mostCommonAnswer = frequentAnswersSorted.first!.key
+        
+        resultAnswerLabel.text = "You are a \(mostCommonAnswer.rawValue)!"
+        resultDefinitionLabel.text = mostCommonAnswer.definition
     }
 }
